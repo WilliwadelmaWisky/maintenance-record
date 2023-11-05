@@ -2,22 +2,31 @@ package gui.component;
 
 import gui.util.Creator;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Paint;
 
 /**
- * @version 4.11.2023
+ * @version 1.0 - 4.11.2023
+ * @version 1.1 - 5.11.2023
  */
-public class ServiceCell extends HBox {
+public class MaintenanceListCell extends HBox {
 
-    private static final String FXML_PATH = "/fxml/service_cell.fxml";
+    private static final String FXML_PATH = "/fxml/maintenance_listcell.fxml";
 
     @FXML Label _dateLabel;
     @FXML Label _mileageLabel;
     @FXML Label _dealershipLabel;
 
 
-    public ServiceCell() {
+    /**
+     *
+     */
+    public MaintenanceListCell() {
         Creator.createFxml(FXML_PATH, this);
 
         _dateLabel.setPrefWidth(150);
@@ -25,7 +34,7 @@ public class ServiceCell extends HBox {
         _dealershipLabel.setPrefWidth(300);
 
         this.setOnMouseClicked(event -> {
-            System.out.println("ServiceCell.Clicked");
+            System.out.println("ServiceListCell.Clicked");
         });
     }
 
@@ -38,4 +47,9 @@ public class ServiceCell extends HBox {
     public void setDate(String date) { _dateLabel.setText(date); }
     public void setMileage(String milage) { _mileageLabel.setText(milage); }
     public void setDealership(String dealership) { _dealershipLabel.setText(dealership); }
+
+    public void setBackgroundColor(String hex) {
+        BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
+        this.setBackground(new Background(backgroundFill));
+    }
 }

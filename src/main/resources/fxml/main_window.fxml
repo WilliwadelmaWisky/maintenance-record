@@ -4,7 +4,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Menu?>
-<?import gui.component.ServiceCell?>
+<?import gui.component.MaintenanceListView?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.MainWindowController">
     <MenuBar VBox.vgrow="NEVER">
@@ -22,7 +22,5 @@
         </Menu>
     </MenuBar>
 
-    <VBox fx:id="serviceList">
-        <ServiceCell date="Maintenance date" mileage="Mileage" dealership="Dealership"/>
-    </VBox>
+    <MaintenanceListView fx:id="_maintenanceListView"/>
 </VBox>

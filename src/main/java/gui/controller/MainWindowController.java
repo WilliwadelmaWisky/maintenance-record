@@ -1,15 +1,18 @@
 package gui.controller;
 
-import gui.component.ServiceCell;
+import core.DistanceUnit;
+import core.MaintenanceRecord;
+import gui.component.MaintenanceListCell;
+import gui.component.MaintenanceListView;
 import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
 
 /**
- * @version 29.10.2023
+ * @version 1.0 - 29.10.2023
+ * @version 1.1 - 5.11.2023
  */
 public class MainWindowController {
 
-    @FXML VBox serviceList;
+    @FXML MaintenanceListView _maintenanceListView;
 
 
     /**
@@ -18,11 +21,13 @@ public class MainWindowController {
     @FXML
     public void initialize() {
 
-        ServiceCell cell = new ServiceCell();
-        cell.setDate("4.11.2023");
-        cell.setMileage("122.078 km");
-        cell.setDealership("Random dealership GMB");
+        MaintenanceRecord rec = new MaintenanceRecord();
 
-        serviceList.getChildren().add(cell);
+        MaintenanceListCell cell = new MaintenanceListCell();
+        cell.setDate(rec.getDate().toString());
+        cell.setMileage(rec.getMileage().toString());
+        cell.setDealership(rec.getDealership());
+
+        _maintenanceListView.add(cell);
     }
 }
