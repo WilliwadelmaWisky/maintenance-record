@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import gui.component.MaintenanceListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import gui.component.KeyValueLabel?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.MainWindowController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.MainWindowController" spacing="2">
     <MenuBar VBox.vgrow="NEVER">
         <Menu mnemonicParsing="false" text="File">
             <MenuItem fx:id="newButton" mnemonicParsing="false" text="New"/>
@@ -22,5 +29,38 @@
         </Menu>
     </MenuBar>
 
-    <MaintenanceListView fx:id="_maintenanceListView"/>
+    <HBox>
+        <TextField/>
+        <Button text="Search"/>
+        <Button text="New"/>
+        <Button text="Delete"/>
+    </HBox>
+
+    <SplitPane>
+        <VBox>
+            <KeyValueLabel key="Vehichle indentification number"/>
+            <KeyValueLabel key="Make"/>
+            <KeyValueLabel key="Model"/>
+            <KeyValueLabel key="Color"/>
+            <KeyValueLabel key="Production date"/>
+            <KeyValueLabel key="Date of first registration"/>
+        </VBox>
+        <VBox>
+            <KeyValueLabel key="Mileage"/>
+            <KeyValueLabel key="Registration number"/>
+        </VBox>
+    </SplitPane>
+
+    <ScrollPane hbarPolicy="NEVER" prefHeight="5000" fitToWidth="true">
+        <VBox>
+            <HBox>
+                <padding>
+                    <Insets top="5" bottom="5" left="10" right="10"/>
+                </padding>
+                <Button text="Maintenance history" prefHeight="40"/>
+            </HBox>
+
+            <MaintenanceListView fx:id="_maintenanceListView" prefWidth="5000"/>
+        </VBox>
+    </ScrollPane>
 </VBox>

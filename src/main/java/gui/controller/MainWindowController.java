@@ -1,7 +1,8 @@
 package gui.controller;
 
-import core.DistanceUnit;
+import core.Dealership;
 import core.MaintenanceRecord;
+import core.Mileage;
 import gui.component.MaintenanceListCell;
 import gui.component.MaintenanceListView;
 import javafx.fxml.FXML;
@@ -21,12 +22,12 @@ public class MainWindowController {
     @FXML
     public void initialize() {
 
-        MaintenanceRecord rec = new MaintenanceRecord();
+        MaintenanceRecord rec = new MaintenanceRecord(new Mileage(120423), new Dealership("CarShop.java"));
 
         MaintenanceListCell cell = new MaintenanceListCell();
         cell.setDate(rec.getDate().toString());
         cell.setMileage(rec.getMileage().toString());
-        cell.setDealership(rec.getDealership());
+        cell.setDealership(rec.getDealership().getName());
 
         _maintenanceListView.add(cell);
     }
