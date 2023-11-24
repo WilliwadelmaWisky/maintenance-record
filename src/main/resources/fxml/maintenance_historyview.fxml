@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import gui.component.MaintenanceListView?>
+
+<fx:root type="VBox" xmlns:fx="http://javafx.com/fxml" spacing="5">
+    <HBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="History"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="_addButton" text="Add"/>
+        <Button fx:id="_deleteButton" text="Delete"/>
+    </HBox>
+    <MaintenanceListView fx:id="_maintenanceListView" prefWidth="5000"/>
+</fx:root>

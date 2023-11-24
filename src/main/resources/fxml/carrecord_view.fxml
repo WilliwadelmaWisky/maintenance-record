@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import gui.component.KeyValueLabel?>
+
+<fx:root type="HBox" xmlns:fx="http://javafx.com/fxml">
+    <VBox>
+        <KeyValueLabel key="Vehichle indentification number" fx:id="_vinLabel"/>
+        <KeyValueLabel key="Make" fx:id="_makeLabel"/>
+        <KeyValueLabel key="Model" fx:id="_modelLabel"/>
+        <KeyValueLabel key="Color" fx:id="_colorLabel"/>
+        <KeyValueLabel key="Production date" fx:id="_productionDateLabel"/>
+    </VBox>
+    <Separator orientation="VERTICAL"/>
+    <VBox>
+        <KeyValueLabel key="Mileage" fx:id="_mileageLabel"/>
+        <KeyValueLabel key="Date of first registration" fx:id="_registrationDateLabel"/>
+        <KeyValueLabel key="Registration number" fx:id="_registrationNumberLabel"/>
+    </VBox>
+</fx:root>

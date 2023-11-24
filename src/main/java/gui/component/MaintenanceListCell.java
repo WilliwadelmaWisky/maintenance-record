@@ -1,5 +1,6 @@
 package gui.component;
 
+import core.MaintenanceRecord;
 import gui.util.Creator;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -51,5 +52,18 @@ public class MaintenanceListCell extends HBox {
     public void setBackgroundColor(String hex) {
         BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
         this.setBackground(new Background(backgroundFill));
+    }
+
+
+    /**
+     * @param record
+     * @return
+     */
+    public static MaintenanceListCell create(MaintenanceRecord record) {
+        MaintenanceListCell cell = new MaintenanceListCell();
+        cell.setDate(record.getDate().toString());
+        cell.setMileage(record.getMileage().toString());
+        cell.setDealership(record.getDealership().getName());
+        return cell;
     }
 }

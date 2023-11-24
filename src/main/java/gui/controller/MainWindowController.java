@@ -1,34 +1,47 @@
 package gui.controller;
 
-import core.Dealership;
-import core.MaintenanceRecord;
-import core.Mileage;
-import gui.component.MaintenanceListCell;
-import gui.component.MaintenanceListView;
+import core.DistanceUnit;
+import core.util.EnumUtil;
+import gui.component.CarRecordView;
+import gui.component.MaintenanceHistoryView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 
 /**
  * @version 1.0 - 29.10.2023
- * @version 1.1 - 5.11.2023
+ * @version 1.1 - 24.11.2023
  */
 public class MainWindowController {
 
-    @FXML MaintenanceListView _maintenanceListView;
+    @FXML MaintenanceHistoryView _maintenanceHistoryView;
+    @FXML CarRecordView _carRecordView;
+    @FXML ChoiceBox<String> _mileageChoiceBox;
+    @FXML TextField _searchField;
 
 
     /**
      *
      */
     @FXML
-    public void initialize() {
+    private void initialize() {
+        ObservableList<String> mileageOptionList = FXCollections.observableArrayList();
+        mileageOptionList.addAll(EnumUtil.getNames(DistanceUnit.class));
+        _mileageChoiceBox.setItems(mileageOptionList);
+        _mileageChoiceBox.getSelectionModel().selectFirst();
+    }
 
-        MaintenanceRecord rec = new MaintenanceRecord(new Mileage(120423), new Dealership("CarShop.java"));
 
-        MaintenanceListCell cell = new MaintenanceListCell();
-        cell.setDate(rec.getDate().toString());
-        cell.setMileage(rec.getMileage().toString());
-        cell.setDealership(rec.getDealership().getName());
+    /**
+     *
+     */
+    @FXML
+    private void onSearch() {
+        if (_searchField.getText().isEmpty())
+            return;
 
-        _maintenanceListView.add(cell);
+        System.out.println("Search...");
     }
 }

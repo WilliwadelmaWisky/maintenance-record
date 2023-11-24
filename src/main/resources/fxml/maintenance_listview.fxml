@@ -2,8 +2,15 @@
 
 <?import javafx.scene.layout.VBox?>
 <?import gui.component.MaintenanceListHeader?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
 
 <fx:root type="VBox" xmlns:fx="http://javafx.com/fxml">
     <MaintenanceListHeader/>
-    <VBox fx:id="_maintenanceList"/>
+    <ScrollPane hbarPolicy="NEVER" prefHeight="5000" fitToWidth="true">
+        <padding>
+            <Insets top="5" bottom="5" left="10" right="10"/>
+        </padding>
+        <VBox fx:id="_maintenanceList"/>
+    </ScrollPane>
 </fx:root>

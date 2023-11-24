@@ -19,7 +19,6 @@ public class MaintenanceListView extends VBox {
      */
     public MaintenanceListView() {
         Creator.createFxml(FXML_PATH, this);
-
     }
 
 

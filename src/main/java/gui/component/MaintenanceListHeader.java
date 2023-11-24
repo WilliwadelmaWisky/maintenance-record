@@ -9,13 +9,17 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 
 /**
- * @version 5.11.2023
+ * @version 1.0 - 5.11.2023
+ * @version 1.1 - 24.11.2023
  */
 public class MaintenanceListHeader extends HBox {
 
-    private static final String FXML_PATH = "/fxml/maintenance_listcell.fxml";
+    private static final String FXML_PATH = "/fxml/maintenance_listheader.fxml";
 
     @FXML Label _dateLabel;
     @FXML Label _mileageLabel;
@@ -39,5 +43,10 @@ public class MaintenanceListHeader extends HBox {
         String hex = "FF0000";
         BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
         this.setBackground(new Background(backgroundFill));
+
+        Font font = Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12);
+        _dateLabel.setFont(font);
+        _mileageLabel.setFont(font);
+        _dealershipLabel.setFont(font);
     }
 }
