@@ -2,9 +2,13 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
-
 <?import javafx.scene.layout.Region?>
+<?import javafx.geometry.Insets?>
+
 <fx:root type="HBox" xmlns:fx="http://javafx.com/fxml" alignment="CENTER_LEFT">
+    <padding>
+        <Insets left="10" right="10"/>
+    </padding>
     <Region minWidth="30" maxWidth="30" minHeight="30"/>
     <Label fx:id="_dateLabel" text="Maintenance date"/>
     <Label fx:id="_mileageLabel" text="Mileage"/>

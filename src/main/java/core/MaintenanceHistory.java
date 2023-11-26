@@ -2,12 +2,14 @@ package core;
 
 import core.serialization.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * @version 1.0 - 24.11.2023
+ * @version 1.1 - 26.11.2023
  */
-public class MaintenanceHistory implements Serializable {
+public class MaintenanceHistory implements Serializable, Iterable<MaintenanceRecord> {
 
     private final List<MaintenanceRecord> _recordList;
 
@@ -54,5 +56,14 @@ public class MaintenanceHistory implements Serializable {
             MaintenanceRecord rec = new MaintenanceRecord();
             rec.deserialize(prop);
         }
+    }
+
+
+    /**
+     * @return
+     */
+    @Override
+    public Iterator<MaintenanceRecord> iterator() {
+        return _recordList.iterator();
     }
 }

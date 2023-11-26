@@ -1,5 +1,6 @@
 package gui.component;
 
+import core.CarRecord;
 import gui.util.Creator;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
@@ -27,7 +28,20 @@ public class CarRecordView extends HBox {
      */
     public CarRecordView() {
         Creator.createFxml(FXML_PATH, this);
+    }
 
-        _colorLabel.setValue("Lava grey");
+
+    /**
+     * @param record
+     */
+    public void show(CarRecord record) {
+        _vinLabel.setValue(record.getVin());
+        _makeLabel.setValue(record.getModel().getMake());
+        _modelLabel.setValue(record.getModel().getModel());
+        _colorLabel.setValue(record.getModel().getColorCode());
+        _productionDateLabel.setValue(record.getModel().getProductionDate().toString());
+        _registrationDateLabel.setValue(record.getRegistration().getFirstRegistrationDate().toString());
+        _mileageLabel.setValue(record.getMileage().toString());
+        _registrationNumberLabel.setValue(record.getRegistration().getRegistrationPlate());
     }
 }

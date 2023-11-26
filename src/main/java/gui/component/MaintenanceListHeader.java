@@ -15,7 +15,7 @@ import javafx.scene.text.FontWeight;
 
 /**
  * @version 1.0 - 5.11.2023
- * @version 1.1 - 24.11.2023
+ * @version 1.1 - 26.11.2023
  */
 public class MaintenanceListHeader extends HBox {
 
@@ -40,7 +40,7 @@ public class MaintenanceListHeader extends HBox {
         _mileageLabel.setPrefWidth(100);
         _dealershipLabel.setPrefWidth(300);
 
-        String hex = "FF0000";
+        String hex = "bacad4";
         BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
         this.setBackground(new Background(backgroundFill));
 

@@ -1,5 +1,6 @@
 package gui.component;
 
+import core.MaintenanceHistory;
 import core.MaintenanceRecord;
 import gui.util.Creator;
 import javafx.fxml.FXML;
@@ -30,6 +31,18 @@ public class MaintenanceHistoryView extends VBox {
 
 
     /**
+     * @param history
+     */
+    public void show(MaintenanceHistory history) {
+        _maintenanceListView.clear();
+        for (MaintenanceRecord rec : history) {
+            MaintenanceListCell cell = MaintenanceListCell.create(rec);
+            _maintenanceListView.add(cell);
+        }
+    }
+
+
+    /**
      *
      */
     private void onAddRecord() {
@@ -42,6 +55,6 @@ public class MaintenanceHistoryView extends VBox {
      *
      */
     private void onDeleteRecord() {
-
+        _maintenanceListView.deleteLast();
     }
 }

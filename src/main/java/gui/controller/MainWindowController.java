@@ -1,6 +1,8 @@
 package gui.controller;
 
-import core.DistanceUnit;
+import core.*;
+import core.util.Country;
+import core.util.Date;
 import core.util.EnumUtil;
 import gui.component.CarRecordView;
 import gui.component.MaintenanceHistoryView;
@@ -12,7 +14,7 @@ import javafx.scene.control.TextField;
 
 /**
  * @version 1.0 - 29.10.2023
- * @version 1.1 - 24.11.2023
+ * @version 1.1 - 26.11.2023
  */
 public class MainWindowController {
 
@@ -43,5 +45,14 @@ public class MainWindowController {
             return;
 
         System.out.println("Search...");
+
+        CarModel model = new CarModel("Audi", "A6", Country.GERMANY, "2997", "lava grey", new Date(10, 12, 2003));
+        Registration registration = new Registration(new Date(1, 1, 2004), "A¤A-999");
+        CarRecord rec = new CarRecord("123456789", new Mileage(120000), model, registration);
+        _carRecordView.show(rec);
+
+        rec.getMaintenanceHistory().add(new MaintenanceRecord(new Mileage(80000), new Dealership("CarShop")));
+        rec.getMaintenanceHistory().add(new MaintenanceRecord(new Mileage(95000), new Dealership("CarShop")));
+        _maintenanceHistoryView.show(rec.getMaintenanceHistory());
     }
 }
