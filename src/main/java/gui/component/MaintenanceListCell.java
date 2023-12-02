@@ -2,6 +2,7 @@ package gui.component;
 
 import core.MaintenanceRecord;
 import gui.util.Creator;
+import gui.window.MaintenanceEditWindow;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -13,7 +14,7 @@ import javafx.scene.paint.Paint;
 
 /**
  * @version 1.0 - 4.11.2023
- * @version 1.1 - 5.11.2023
+ * @version 1.1 - 2.12.2023
  */
 public class MaintenanceListCell extends HBox {
 
@@ -22,6 +23,8 @@ public class MaintenanceListCell extends HBox {
     @FXML Label _dateLabel;
     @FXML Label _mileageLabel;
     @FXML Label _dealershipLabel;
+
+    private MaintenanceRecord _record;
 
 
     /**
@@ -35,7 +38,13 @@ public class MaintenanceListCell extends HBox {
         _dealershipLabel.setPrefWidth(300);
 
         this.setOnMouseClicked(event -> {
+            if (_record == null)
+                return;
+
             System.out.println("ServiceListCell.Clicked");
+
+            MaintenanceEditWindow window = new MaintenanceEditWindow(_record);
+            window.show();
         });
     }
 
@@ -57,13 +66,12 @@ public class MaintenanceListCell extends HBox {
 
     /**
      * @param record
-     * @return
      */
-    public static MaintenanceListCell create(MaintenanceRecord record) {
-        MaintenanceListCell cell = new MaintenanceListCell();
-        cell.setDate(record.getDate().toString());
-        cell.setMileage(record.getMileage().toString());
-        cell.setDealership(record.getDealership().getName());
-        return cell;
+    public void show(MaintenanceRecord record) {
+        _record = record;
+
+        setDate(record.getDate().toString());
+        setMileage(record.getMileage().toString());
+        setDealership(record.getDealership().getName());
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import gui.component.KeyValueEntry?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.MaintenanceEditWindowController" prefWidth="500">
+    <padding>
+        <Insets left="10" right="10" top="15" bottom="15"/>
+    </padding>
+
+    <KeyValueEntry key="Date" fx:id="_dateEntry"/>
+    <KeyValueEntry key="Mileage" fx:id="_mileageEntry"/>
+    <KeyValueEntry key="Dealership" fx:id="_dealershipEntry"/>
+</VBox>

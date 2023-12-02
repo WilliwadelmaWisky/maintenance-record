@@ -8,7 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 /**
- * @version 24.11.2023
+ * @version 1.0 - 24.11.2023
+ * @version 1.1 - 2.12.2023
  */
 public class MaintenanceHistoryView extends VBox {
 
@@ -36,8 +37,9 @@ public class MaintenanceHistoryView extends VBox {
     public void show(MaintenanceHistory history) {
         _maintenanceListView.clear();
         for (MaintenanceRecord rec : history) {
-            MaintenanceListCell cell = MaintenanceListCell.create(rec);
+            MaintenanceListCell cell = new MaintenanceListCell();
             _maintenanceListView.add(cell);
+            cell.show(rec);
         }
     }
 
@@ -47,8 +49,9 @@ public class MaintenanceHistoryView extends VBox {
      */
     private void onAddRecord() {
         MaintenanceRecord record = new MaintenanceRecord();
-        MaintenanceListCell cell = MaintenanceListCell.create(record);
+        MaintenanceListCell cell = new MaintenanceListCell();
         _maintenanceListView.add(cell);
+        cell.show(record);
     }
 
     /**

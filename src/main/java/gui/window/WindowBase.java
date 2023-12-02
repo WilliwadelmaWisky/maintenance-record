@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * @version 29.10.2023
+ * @version 1.0 - 29.10.2023
+ * @version 1.1 - 2.12.2023
  */
 public abstract class WindowBase {
 
@@ -38,6 +39,11 @@ public abstract class WindowBase {
         _stage.setWidth(width);
         _stage.setHeight(height);
     }
+
+    /**
+     * @param resizable
+     */
+    public void setResizable(boolean resizable) { _stage.setResizable(resizable); }
 
 
     /**

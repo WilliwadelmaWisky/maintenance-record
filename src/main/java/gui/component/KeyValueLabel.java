@@ -10,7 +10,7 @@ import javafx.scene.text.FontWeight;
 
 /**
  * @version 1.0 - 11.11.2023
- * @version 1.1 - 26.11.2023
+ * @version 1.1 - 2.12.2023
  */
 public class KeyValueLabel extends HBox {
 
@@ -31,10 +31,6 @@ public class KeyValueLabel extends HBox {
 
         Font font = Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 12);
         _keyLabel.setFont(font);
-
-        this.setOnMouseClicked(event -> {
-            System.out.println("KeyValueLabel.Clicked");
-        });
     }
 
 

@@ -2,11 +2,13 @@ package gui.component;
 
 import core.CarRecord;
 import gui.util.Creator;
+import gui.window.CarEditWindow;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 
 /**
  * @version 1.0 - 24.11.2023
+ * @version 1.1 - 2.12.2023
  */
 public class CarRecordView extends HBox {
 
@@ -21,6 +23,7 @@ public class CarRecordView extends HBox {
     @FXML KeyValueLabel _mileageLabel;
     @FXML KeyValueLabel _registrationNumberLabel;
 
+    private CarRecord _record;
 
 
     /**
@@ -28,6 +31,16 @@ public class CarRecordView extends HBox {
      */
     public CarRecordView() {
         Creator.createFxml(FXML_PATH, this);
+        _record = null;
+
+        this.setOnMouseClicked(e -> {
+            if (_record == null)
+                return;
+
+            System.out.println("View clicked");
+            CarEditWindow window = new CarEditWindow(_record);
+            window.show();
+        });
     }
 
 
@@ -35,6 +48,8 @@ public class CarRecordView extends HBox {
      * @param record
      */
     public void show(CarRecord record) {
+        _record = record;
+
         _vinLabel.setValue(record.getVin());
         _makeLabel.setValue(record.getModel().getMake());
         _modelLabel.setValue(record.getModel().getModel());

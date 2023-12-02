@@ -1,12 +1,14 @@
 package gui.window;
 
+import gui.util.Loader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 import gui.controller.MainWindowController;
 
 /**
- * @version 29.10.2023
+ * @version 1.0 - 29.10.2023
+ * @version 1.1 - 2.12.2023
  */
 public class MainWindow extends WindowBase {
 
@@ -41,16 +43,7 @@ public class MainWindow extends WindowBase {
      */
     @Override
     protected Parent loadContent() {
-
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(MainWindow.class.getResource(FXML_PATH));
-
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-
-        return root;
+        return Loader.loadFxml(FXML_PATH);
     }
 
 }

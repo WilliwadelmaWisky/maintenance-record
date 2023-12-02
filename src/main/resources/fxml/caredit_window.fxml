@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import gui.component.KeyValueEntry?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.CarEditWindowController" prefWidth="500">
+    <padding>
+        <Insets left="10" right="10" top="15" bottom="15"/>
+    </padding>
+
+    <KeyValueEntry key="VIN" fx:id="_vinEntry" disable="true"/>
+    <KeyValueEntry key="Make" fx:id="_makeEntry"/>
+    <KeyValueEntry key="Model" fx:id="_modelEntry"/>
+    <KeyValueEntry key="Color" fx:id="_colorEntry"/>
+    <KeyValueEntry key="Production Date" fx:id="_productionDateEntry"/>
+    <KeyValueEntry key="Mileage" fx:id="_mileageEntry"/>
+    <KeyValueEntry key="Registration Date" fx:id="_registrationDateEntry"/>
+    <KeyValueEntry key="Registration Number" fx:id="_registrationNumberEntry"/>
+</VBox>
