@@ -6,7 +6,7 @@ import core.util.UniqueID;
 
 /**
  * @version 1.0 - 5.11.2023
- * @version 1.1 - 11.11.2023
+ * @version 1.1 - 3.12.2023
  */
 public class MaintenanceRecord implements Serializable {
 
@@ -14,6 +14,7 @@ public class MaintenanceRecord implements Serializable {
     private final Date _date;
     private final Mileage _mileage;
     private final Dealership _dealership;
+    private final String _description;
 
 
 
@@ -22,33 +23,37 @@ public class MaintenanceRecord implements Serializable {
      * @param date
      * @param mileage
      * @param dealership
+     * @param description
      */
-    public MaintenanceRecord(Date date, Mileage mileage, Dealership dealership) {
+    public MaintenanceRecord(Date date, Mileage mileage, Dealership dealership, String description) {
         _id = new UniqueID();
         _date = date;
         _mileage = mileage;
         _dealership = dealership;
+        _description = description;
     }
 
     /**
      * @param mileage
      * @param dealership
+     * @param description
      */
-    public MaintenanceRecord(Mileage mileage, Dealership dealership){
-        this(Date.now(), mileage, dealership);
+    public MaintenanceRecord(Mileage mileage, Dealership dealership, String description){
+        this(Date.now(), mileage, dealership, description);
     }
 
     /**
      *
      */
     public MaintenanceRecord() {
-        this(new Mileage(0), new Dealership());
+        this(new Mileage(0), new Dealership(), null);
     }
 
 
     public Date getDate() { return _date; }
     public Mileage getMileage() { return _mileage; }
     public Dealership getDealership() { return _dealership; }
+    public String getDescription() { return _description; }
 
 
     /**

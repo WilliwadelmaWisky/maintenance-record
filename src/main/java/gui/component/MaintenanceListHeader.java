@@ -15,7 +15,7 @@ import javafx.scene.text.FontWeight;
 
 /**
  * @version 1.0 - 5.11.2023
- * @version 1.1 - 26.11.2023
+ * @version 1.1 - 3.12.2023
  */
 public class MaintenanceListHeader extends HBox {
 
@@ -24,6 +24,7 @@ public class MaintenanceListHeader extends HBox {
     @FXML Label _dateLabel;
     @FXML Label _mileageLabel;
     @FXML Label _dealershipLabel;
+    @FXML Label _descriptionLabel;
 
 
     /**
@@ -36,9 +37,10 @@ public class MaintenanceListHeader extends HBox {
         _mileageLabel.setText("Mileage");
         _dealershipLabel.setText("Dealership");
 
-        _dateLabel.setPrefWidth(150);
-        _mileageLabel.setPrefWidth(100);
-        _dealershipLabel.setPrefWidth(300);
+        _dateLabel.setMinWidth(150);
+        _mileageLabel.setMinWidth(100);
+        _dealershipLabel.setMinWidth(100);
+        _descriptionLabel.setPrefWidth(2000);
 
         String hex = "bacad4";
         BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
@@ -48,5 +50,6 @@ public class MaintenanceListHeader extends HBox {
         _dateLabel.setFont(font);
         _mileageLabel.setFont(font);
         _dealershipLabel.setFont(font);
+        _descriptionLabel.setFont(font);
     }
 }

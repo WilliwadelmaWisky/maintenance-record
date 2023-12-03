@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Menu?>
+
+<fx:root type="MenuBar" xmlns:fx="http://javafx.com/fxml">
+    <Menu mnemonicParsing="false" text="File">
+        <MenuItem fx:id="_newButton" mnemonicParsing="false" text="New"/>
+        <MenuItem fx:id="_saveButton" mnemonicParsing="false" text="Save"/>
+        <MenuItem fx:id="_importButton" mnemonicParsing="false" text="Import"/>
+        <MenuItem fx:id="_printButton" mnemonicParsing="false" text="Print to PDF"/>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Edit">
+        <MenuItem fx:id="_updateButton" mnemonicParsing="false" text="Check for updates"/>
+        <MenuItem fx:id="_settingsButton" mnemonicParsing="false" text="Open settings"/>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+        <MenuItem fx:id="_helpButton" mnemonicParsing="false" text="Help"/>
+        <MenuItem fx:id="_infoButton" mnemonicParsing="false" text="Info"/>
+        <MenuItem fx:id="_repoButton" mnemonicParsing="false" text="Open GIT repository"/>
+    </Menu>
+</fx:root>

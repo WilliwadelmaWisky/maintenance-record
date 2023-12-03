@@ -13,4 +13,5 @@
     <Label fx:id="_dateLabel" text="Maintenance date"/>
     <Label fx:id="_mileageLabel" text="Mileage"/>
     <Label fx:id="_dealershipLabel" text="Dealership"/>
+    <Label fx:id="_descriptionLabel" text="Description"/>
 </fx:root>

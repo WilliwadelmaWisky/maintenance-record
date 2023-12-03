@@ -1,11 +1,13 @@
 package gui.controller;
 
-import core.*;
-import core.util.Country;
-import core.util.Date;
+import core.CarRecord;
+import core.DistanceUnit;
+import core.event.SaveCallback;
+import core.event.SearchCallback;
 import core.util.EnumUtil;
 import gui.component.CarRecordView;
 import gui.component.MaintenanceHistoryView;
+import gui.component.Menu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +16,7 @@ import javafx.scene.control.TextField;
 
 /**
  * @version 1.0 - 29.10.2023
- * @version 1.1 - 26.11.2023
+ * @version 1.1 - 3.12.2023
  */
 public class MainWindowController {
 
@@ -22,17 +24,26 @@ public class MainWindowController {
     @FXML CarRecordView _carRecordView;
     @FXML ChoiceBox<String> _mileageChoiceBox;
     @FXML TextField _searchField;
+    @FXML Menu _menu;
+
+    private SearchCallback _onSearch;
+    private SaveCallback _onSave;
+    private CarRecord _record;
 
 
     /**
      *
      */
-    @FXML
-    private void initialize() {
+    public void onLoad(SearchCallback onSearch, SaveCallback onSave) {
+        _onSearch = onSearch;
+        _onSave = onSave;
+
         ObservableList<String> mileageOptionList = FXCollections.observableArrayList();
         mileageOptionList.addAll(EnumUtil.getNames(DistanceUnit.class));
         _mileageChoiceBox.setItems(mileageOptionList);
         _mileageChoiceBox.getSelectionModel().selectFirst();
+
+        _menu.setSaveCallback(this::onSave);
     }
 
 
@@ -45,14 +56,17 @@ public class MainWindowController {
             return;
 
         System.out.println("Search...");
+        CarRecord record = _onSearch.invoke(_searchField.getText());
+        if (record == null)
+            return;
 
-        CarModel model = new CarModel("Audi", "A6", Country.GERMANY, "2997", "lava grey", new Date(10, 12, 2003));
-        Registration registration = new Registration(new Date(1, 1, 2004), "A¤A-999");
-        CarRecord rec = new CarRecord("123456789", new Mileage(120000), model, registration);
-        _carRecordView.show(rec);
+        _record = record;
+        _carRecordView.show(record);
+        _maintenanceHistoryView.show(record.getMaintenanceHistory());
+    }
 
-        rec.getMaintenanceHistory().add(new MaintenanceRecord(new Mileage(80000), new Dealership("CarShop")));
-        rec.getMaintenanceHistory().add(new MaintenanceRecord(new Mileage(95000), new Dealership("CarShop")));
-        _maintenanceHistoryView.show(rec.getMaintenanceHistory());
+
+    private void onSave() {
+        _onSave.invoke(_record);
     }
 }

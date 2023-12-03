@@ -2,9 +2,6 @@
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
@@ -13,26 +10,11 @@
 <?import javafx.scene.layout.Region?>
 <?import gui.component.MaintenanceHistoryView?>
 <?import gui.component.CarRecordView?>
-
 <?import javafx.scene.control.Separator?>
+<?import gui.component.Menu?>
+
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.controller.MainWindowController" spacing="2">
-    <MenuBar VBox.vgrow="NEVER">
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem fx:id="newButton" mnemonicParsing="false" text="New"/>
-            <MenuItem fx:id="saveButton" mnemonicParsing="false" text="Save"/>
-            <MenuItem fx:id="importButton" mnemonicParsing="false" text="Import"/>
-            <MenuItem fx:id="printButton" mnemonicParsing="false" text="Print to PDF"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-            <MenuItem fx:id="updateButton" mnemonicParsing="false" text="Check for updates"/>
-            <MenuItem fx:id="settingsButton" mnemonicParsing="false" text="Open settings"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <MenuItem fx:id="helpButton" mnemonicParsing="false" text="Help"/>
-            <MenuItem fx:id="infoButton" mnemonicParsing="false" text="Info"/>
-            <MenuItem fx:id="repoButton" mnemonicParsing="false" text="Open GIT repository"/>
-        </Menu>
-    </MenuBar>
+    <Menu fx:id="_menu" VBox.vgrow="NEVER"/>
 
     <HBox spacing="5" alignment="CENTER_LEFT">
         <padding>
