@@ -3,10 +3,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import gui.component.KeyValueEntry?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="gui.controller.CarEditWindowController"
-      prefWidth="500" spacing="5">
+      prefWidth="500" spacing="5"
+      alignment="TOP_RIGHT">
 
     <padding>
         <Insets left="20" right="20" top="15" bottom="15"/>
@@ -20,4 +22,7 @@
     <KeyValueEntry key="Mileage" fx:id="_mileageEntry"/>
     <KeyValueEntry key="Registration Date" fx:id="_registrationDateEntry"/>
     <KeyValueEntry key="Registration Number" fx:id="_registrationNumberEntry"/>
+
+    <Button text="Apply" fx:id="_applyButton"
+            prefHeight="35" prefWidth="120"/>
 </VBox>

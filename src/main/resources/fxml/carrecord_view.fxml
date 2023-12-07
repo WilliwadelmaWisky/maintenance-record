@@ -7,7 +7,7 @@
 
 <fx:root type="HBox" xmlns:fx="http://javafx.com/fxml">
     <VBox>
-        <KeyValueLabel key="Vehichle indentification number" fx:id="_vinLabel"/>
+        <KeyValueLabel key="VIN" fx:id="_vinLabel"/>
         <KeyValueLabel key="Make" fx:id="_makeLabel"/>
         <KeyValueLabel key="Model" fx:id="_modelLabel"/>
         <KeyValueLabel key="Color" fx:id="_colorLabel"/>

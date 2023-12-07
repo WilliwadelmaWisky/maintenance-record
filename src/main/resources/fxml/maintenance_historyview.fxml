@@ -13,7 +13,7 @@
         <padding>
             <Insets left="10" right="10"/>
         </padding>
-        <Label text="History"/>
+        <Label text="Maintenance History"/>
         <Region HBox.hgrow="ALWAYS"/>
         <Button fx:id="_addButton" text="Add"/>
         <Button fx:id="_deleteButton" text="Delete"/>

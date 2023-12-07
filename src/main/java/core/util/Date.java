@@ -4,7 +4,8 @@ import core.serialization.Serializable;
 import java.util.Calendar;
 
 /**
- * @version 11.11.2023
+ * @version 1.0 - 11.11.2023
+ * @version 1.1 - 7.12.2023
  */
 public class Date implements Serializable {
 
@@ -81,7 +82,7 @@ public class Date implements Serializable {
     }
 
     /**
-     * @param s
+     * @param s format: day.month.year
      */
     @Override
     public void deserialize(String s) {

@@ -3,12 +3,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 <?import gui.component.KeyValueEntry?>
-
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+
 <VBox xmlns:fx="http://javafx.com/fxml"
       fx:controller="gui.controller.MaintenanceEditWindowController"
-      prefWidth="500" spacing="5">
+      prefWidth="500" spacing="5"
+      alignment="TOP_RIGHT">
 
     <padding>
         <Insets left="20" right="20" top="15" bottom="15"/>
@@ -17,6 +19,9 @@
     <KeyValueEntry key="Date" fx:id="_dateEntry"/>
     <KeyValueEntry key="Mileage" fx:id="_mileageEntry"/>
     <KeyValueEntry key="Dealership" fx:id="_dealershipEntry"/>
-    <Label text="Description"/>
+    <Label text="Description" prefWidth="2000"/>
     <TextArea fx:id="_descriptionField"/>
+
+    <Button text="Apply" onAction="#onApply"
+            prefHeight="35" prefWidth="120"/>
 </VBox>

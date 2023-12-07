@@ -1,13 +1,15 @@
 package gui.window;
 
 import core.MaintenanceRecord;
+import core.event.Callback;
 import gui.controller.MaintenanceEditWindowController;
 import gui.util.Loader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 /**
- * @version 2.12.2023
+ * @version 1.0 - 2.12.2023
+ * @version 1.1 - 7.12.2023
  */
 public class MaintenanceEditWindow extends WindowBase {
 
@@ -20,13 +22,13 @@ public class MaintenanceEditWindow extends WindowBase {
     /**
      * @param record
      */
-    public MaintenanceEditWindow(MaintenanceRecord record) {
+    public MaintenanceEditWindow(MaintenanceRecord record, Callback onApply) {
         super(new Stage());
 
         setTitle(TITLE);
         setResizable(false);
 
-        _controller.onLoad(record);
+        _controller.onLoad(record, onApply, this::close);
     }
 
 

@@ -6,7 +6,7 @@ import core.util.UniqueID;
 
 /**
  * @version 1.0 - 5.11.2023
- * @version 1.1 - 3.12.2023
+ * @version 1.1 - 7.12.2023
  */
 public class MaintenanceRecord implements Serializable {
 
@@ -14,7 +14,7 @@ public class MaintenanceRecord implements Serializable {
     private final Date _date;
     private final Mileage _mileage;
     private final Dealership _dealership;
-    private final String _description;
+    private String _description;
 
 
 
@@ -54,6 +54,12 @@ public class MaintenanceRecord implements Serializable {
     public Mileage getMileage() { return _mileage; }
     public Dealership getDealership() { return _dealership; }
     public String getDescription() { return _description; }
+
+
+    /**
+     * @param description
+     */
+    public void setDescription(String description) { _description = description; }
 
 
     /**

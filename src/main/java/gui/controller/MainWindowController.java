@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 
 /**
  * @version 1.0 - 29.10.2023
- * @version 1.1 - 3.12.2023
+ * @version 1.1 - 7.12.2023
  */
 public class MainWindowController {
 
@@ -66,6 +66,9 @@ public class MainWindowController {
     }
 
 
+    /**
+     *
+     */
     private void onSave() {
         _onSave.invoke(_record);
     }

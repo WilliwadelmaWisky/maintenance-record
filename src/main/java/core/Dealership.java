@@ -3,7 +3,8 @@ package core;
 import core.serialization.Serializable;
 
 /**
- * @version 11.11.2023
+ * @version 1.0 - 11.11.2023
+ * @version 1.1 - 7.12.2023
  */
 public class Dealership implements Serializable {
 
@@ -24,6 +25,7 @@ public class Dealership implements Serializable {
 
 
     public String getName() { return _name; }
+    public void setName(String name) { _name = name; }
 
 
     /**

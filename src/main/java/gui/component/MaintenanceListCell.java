@@ -14,7 +14,7 @@ import javafx.scene.paint.Paint;
 
 /**
  * @version 1.0 - 4.11.2023
- * @version 1.1 - 3.12.2023
+ * @version 1.1 - 7.12.2023
  */
 public class MaintenanceListCell extends HBox {
 
@@ -34,9 +34,9 @@ public class MaintenanceListCell extends HBox {
     public MaintenanceListCell() {
         Creator.createFxml(FXML_PATH, this);
 
-        _dateLabel.setMinWidth(150);
+        _dateLabel.setMinWidth(100);
         _mileageLabel.setMinWidth(100);
-        _dealershipLabel.setMinWidth(100);
+        _dealershipLabel.setMinWidth(120);
         _descriptionLabel.setPrefWidth(2000);
 
         this.setOnMouseClicked(event -> {
@@ -44,15 +44,9 @@ public class MaintenanceListCell extends HBox {
                 return;
 
             System.out.println("ServiceListCell.Clicked");
-            MaintenanceEditWindow window = new MaintenanceEditWindow(_record);
+            MaintenanceEditWindow window = new MaintenanceEditWindow(_record, this::updateView);
             window.show();
         });
-    }
-
-
-    public void setBackgroundColor(String hex) {
-        BackgroundFill backgroundFill = new BackgroundFill(Paint.valueOf(hex), CornerRadii.EMPTY, Insets.EMPTY);
-        this.setBackground(new Background(backgroundFill));
     }
 
 
@@ -61,10 +55,17 @@ public class MaintenanceListCell extends HBox {
      */
     public void show(MaintenanceRecord record) {
         _record = record;
+        updateView();
+    }
 
-        _dateLabel.setText(record.getDate().toString());
-        _mileageLabel.setText(record.getMileage().toString());
-        _dealershipLabel.setText(record.getDealership().getName());
-        _descriptionLabel.setText(record.getDescription());
+
+    /**
+     *
+     */
+    private void updateView() {
+        _dateLabel.setText(_record.getDate().toString());
+        _mileageLabel.setText(_record.getMileage().toString());
+        _dealershipLabel.setText(_record.getDealership().getName());
+        _descriptionLabel.setText(_record.getDescription());
     }
 }
