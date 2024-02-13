@@ -4,6 +4,12 @@ An easy to use maintenance record for keeping track of car maintenance for examp
 
 Work in Progress
 
-Packages used
+## Dependencies
 - JavaFX
+
+## Installation
+NOT READY TO BE USED
+
+## FEATURES
+- ...
  
