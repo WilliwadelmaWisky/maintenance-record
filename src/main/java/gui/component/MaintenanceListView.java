@@ -5,8 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
 /**
- * @version 1.0 - 5.11.2023
- * @version 1.1 - 26.11.2023
+ * @version 13.2.2024
  */
 public class MaintenanceListView extends VBox {
 
@@ -26,6 +25,6 @@ public class MaintenanceListView extends VBox {
     public void add(MaintenanceListCell cell) {
         _maintenanceList.getChildren().add(cell);
     }
-    public void deleteLast() { _maintenanceList.getChildren().removeLast(); }
+    public void deleteLast() { _maintenanceList.getChildren().remove(_maintenanceList.getChildren().size() - 1); }
     public void clear() { _maintenanceList.getChildren().clear(); }
 }
