@@ -3,9 +3,9 @@ package entry;
 import gui.application.GUIApplication;
 
 /**
- * @version 29.10.2023
+ * @version 13.2.2024
  */
-public class Main {
+public final class MainGUI {
 
     /**
      * @param args

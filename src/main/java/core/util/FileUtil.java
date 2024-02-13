@@ -3,7 +3,7 @@ package core.util;
 import java.nio.file.Paths;
 
 /**
- * @version 1.0 - 3.12.2023
+ * @version 13.2.2024
  */
 public class FileUtil {
 
@@ -17,6 +17,11 @@ public class FileUtil {
      */
     public static String combinePath(String first, String... more) {
         return Paths.get(first, more).toString();
+    }
+
+
+    public static String readAll(String filePath) {
+        return "";
     }
 
 }

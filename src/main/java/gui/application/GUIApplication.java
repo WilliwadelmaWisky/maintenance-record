@@ -9,13 +9,10 @@ import javafx.stage.Stage;
 import gui.window.MainWindow;
 
 /**
- * @version 1.0 - 29.10.2023
- * @version 1.1 - 3.12.2023
+ * @version 13.2.2024
  */
 public class GUIApplication extends Application {
 
-    private static final String HOME_DIR = FileUtil.combinePath(FileUtil.USER_HOME, ".wwwisky", "maintenance_record");
-    private static final String SEARCH_INFO_PATH = FileUtil.combinePath(HOME_DIR, "search_info.txt");
 
 
     /**
