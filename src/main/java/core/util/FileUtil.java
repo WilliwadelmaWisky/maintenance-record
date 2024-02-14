@@ -3,7 +3,7 @@ package core.util;
 import java.nio.file.Paths;
 
 /**
- * @version 13.2.2024
+ * @version 14.2.2024
  */
 public class FileUtil {
 
@@ -23,5 +23,6 @@ public class FileUtil {
     public static String readAll(String filePath) {
         return "";
     }
+    public static void writeAll(String filePath, String contents) { }
 
 }

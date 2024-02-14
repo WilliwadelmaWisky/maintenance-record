@@ -3,13 +3,12 @@ package gui.application;
 import core.*;
 import core.util.Country;
 import core.util.Date;
-import core.util.FileUtil;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import gui.window.MainWindow;
 
 /**
- * @version 13.2.2024
+ * @version 14.2.2024
  */
 public class GUIApplication extends Application {
 
