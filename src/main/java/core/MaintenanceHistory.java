@@ -1,6 +1,6 @@
 package core;
 
-import core.serialization.Serializable;
+import core.util.serialization.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

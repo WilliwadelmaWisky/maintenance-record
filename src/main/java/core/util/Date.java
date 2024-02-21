@@ -1,11 +1,10 @@
 package core.util;
 
-import core.serialization.Serializable;
+import core.util.serialization.Serializable;
 import java.util.Calendar;
 
 /**
- * @version 1.0 - 11.11.2023
- * @version 1.1 - 7.12.2023
+ * @version 21.2.2024
  */
 public class Date implements Serializable {
 

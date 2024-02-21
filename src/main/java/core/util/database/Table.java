@@ -1,6 +1,6 @@
-package core.database;
+package core.util.database;
 
-import core.util.Predicate;
+import core.util.event.Predicate;
 import java.util.LinkedList;
 
 /**
@@ -13,7 +13,7 @@ public class Table {
 
     public Table(String name) {
         _name = name;
-        _modelList = new LinkedList<Model>();
+        _modelList = new LinkedList<>();
     }
 
 

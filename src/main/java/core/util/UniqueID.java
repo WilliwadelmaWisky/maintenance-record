@@ -1,6 +1,6 @@
 package core.util;
 
-import core.serialization.Serializable;
+import core.util.serialization.Serializable;
 import java.util.UUID;
 
 /**

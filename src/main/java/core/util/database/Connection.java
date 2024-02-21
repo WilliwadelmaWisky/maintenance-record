@@ -1,4 +1,4 @@
-package core.database;
+package core.util.database;
 
 /**
  * @version 13.2.2024

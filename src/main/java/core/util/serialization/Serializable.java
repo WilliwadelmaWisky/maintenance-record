@@ -1,4 +1,4 @@
-package core.serialization;
+package core.util.serialization;
 
 /**
  * @version 11.11.2023

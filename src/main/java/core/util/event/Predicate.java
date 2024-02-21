@@ -1,4 +1,4 @@
-package core.util;
+package core.util.event;
 
 
 /**
@@ -12,5 +12,5 @@ public interface Predicate<T> {
      * @param obj
      * @return
      */
-    boolean call(T obj);
+    boolean invoke(T obj);
 }

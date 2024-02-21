@@ -1,12 +1,12 @@
 package core;
 
-import core.serialization.Serializable;
+import core.util.database.Model;
 
 /**
  * @version 1.0 - 11.11.2023
  * @version 1.1 - 26.11.2023
  */
-public class CarRecord implements Serializable {
+public class CarRecord implements Model {
 
     private String _vin;
     private final Mileage _mileage;
@@ -35,6 +35,14 @@ public class CarRecord implements Serializable {
     public CarModel getModel() { return _model; }
     public Registration getRegistration() { return _registration; }
     public MaintenanceHistory getMaintenanceHistory() { return _maintenanceHistory; }
+
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String getPrimaryKey() { return _vin; }
 
 
     /**

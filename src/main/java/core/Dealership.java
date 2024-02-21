@@ -1,6 +1,6 @@
 package core;
 
-import core.serialization.Serializable;
+import core.util.serialization.Serializable;
 
 /**
  * @version 1.0 - 11.11.2023

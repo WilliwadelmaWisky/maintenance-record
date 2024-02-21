@@ -1,21 +1,29 @@
-package core.database;
+package core.util.database;
 
 import java.util.HashMap;
 
 /**
- * @version 14.2.2024
+ *
  */
 public class Database {
+
     private HashMap<String, Table> _tableDictionary;
 
 
-    public Database(Provider<Table> provider, Storage storage) {
+    public Database(Storage storage) {
         _tableDictionary = new HashMap<String, Table>();
-        Iterable<Table> tables = provider.load(storage);
+        Object tableData = storage.get();
 
+        /*
         for (Table table : tables) {
             _tableDictionary.put(table.getName(), table);
         }
+         */
+    }
+
+
+    public void close() {
+
     }
 
 

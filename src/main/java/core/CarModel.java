@@ -1,6 +1,6 @@
 package core;
 
-import core.serialization.Serializable;
+import core.util.serialization.Serializable;
 import core.util.Country;
 import core.util.Date;
 

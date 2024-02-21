@@ -2,14 +2,14 @@ package gui.window;
 
 import core.event.SaveCallback;
 import core.event.SearchCallback;
+import core.util.event.Action;
 import gui.util.Loader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 import gui.controller.MainWindowController;
 
 /**
- * @version 1.0 - 29.10.2023
- * @version 1.1 - 3.12.2023
+ *
  */
 public class MainWindow extends WindowBase {
 
@@ -23,16 +23,14 @@ public class MainWindow extends WindowBase {
 
     /**
      * @param stage
-     * @param onSearch
-     * @param onSave
      */
-    public MainWindow(Stage stage, SearchCallback onSearch, SaveCallback onSave) {
+    public MainWindow(Stage stage) {
         super(stage);
 
         setTitle(TITLE);
         setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
-        _controller.onLoad(onSearch, onSave);
+        _controller.onLoad(null, null);
     }
 
 
@@ -46,5 +44,4 @@ public class MainWindow extends WindowBase {
             return 0;
         });
     }
-
 }

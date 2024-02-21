@@ -8,17 +8,14 @@ import javafx.stage.Stage;
 import gui.window.MainWindow;
 
 /**
- * @version 14.2.2024
+ *
  */
 public class GUIApplication extends Application {
-
-
 
     /**
      *
      */
     public static void create() {
-        System.out.println("Initialize home_dir");
         Application.launch(GUIApplication.class);
     }
 
@@ -28,9 +25,7 @@ public class GUIApplication extends Application {
      */
     @Override
     public void start(Stage stage) {
-        System.out.println("Retrieve search info");
-
-        MainWindow window = new MainWindow(stage, this::load, this::save);
+        MainWindow window = new MainWindow(stage);
         window.show();
     }
 
@@ -41,6 +36,8 @@ public class GUIApplication extends Application {
     public void save(CarRecord record) {
         if (record == null)
             return;
+
+        //Connection connection = new Connection();
 
         System.out.println("Save: " + record.getVin());
     }
